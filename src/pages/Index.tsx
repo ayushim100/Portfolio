@@ -290,6 +290,9 @@ const Footer = () => (
         <a href="mailto:ayushim100@gmail.com" className="glass-card p-3 rounded-lg hover:border-primary/50 transition-colors">
           <Mail size={20} className="text-foreground" />
         </a>
+        <a href="https://github.com/ayushim100" target="_blank" rel="noopener noreferrer" className="glass-card p-3 rounded-lg hover:border-primary/50 transition-colors">
+          <Github size={20} className="text-foreground" />
+        </a>
         <a href="tel:+917302547099" className="glass-card p-3 rounded-lg hover:border-primary/50 transition-colors">
           <Phone size={20} className="text-foreground" />
         </a>
