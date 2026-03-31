@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, ExternalLink, Github, ChevronDown } from "lucide-react";
+import profilePhoto from "@/assets/profile-photo.jpg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
