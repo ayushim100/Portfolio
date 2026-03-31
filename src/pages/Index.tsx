@@ -14,37 +14,50 @@ const fadeUp = {
 const Hero = () => (
   <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 overflow-hidden">
     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(38_92%_55%/0.08),transparent_60%)]" />
-    <div className="relative z-10 max-w-5xl">
-      <motion.p
-        variants={fadeUp} initial="hidden" animate="visible" custom={0}
-        className="text-primary font-heading text-sm tracking-[0.3em] uppercase mb-4"
-      >
-        Full Stack Developer
-      </motion.p>
-      <motion.h1
-        variants={fadeUp} initial="hidden" animate="visible" custom={1}
-        className="font-heading text-5xl sm:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-6"
-      >
-        Ayushi<br />
-        <span className="text-primary glow-accent">Maheshwari</span>
-      </motion.h1>
-      <motion.p
-        variants={fadeUp} initial="hidden" animate="visible" custom={2}
-        className="text-muted-foreground text-lg md:text-xl max-w-xl leading-relaxed mb-8"
-      >
-        Building scalable products at the intersection of design & engineering.
-        IIT Kanpur graduate with 3+ years of full-stack experience.
-      </motion.p>
+    <div className="relative z-10 max-w-5xl flex flex-col-reverse md:flex-row md:items-center md:gap-16">
+      <div className="flex-1">
+        <motion.p
+          variants={fadeUp} initial="hidden" animate="visible" custom={0}
+          className="text-primary font-heading text-sm tracking-[0.3em] uppercase mb-4"
+        >
+          Full Stack Developer
+        </motion.p>
+        <motion.h1
+          variants={fadeUp} initial="hidden" animate="visible" custom={1}
+          className="font-heading text-5xl sm:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-6"
+        >
+          Ayushi<br />
+          <span className="text-primary glow-accent">Maheshwari</span>
+        </motion.h1>
+        <motion.p
+          variants={fadeUp} initial="hidden" animate="visible" custom={2}
+          className="text-muted-foreground text-lg md:text-xl max-w-xl leading-relaxed mb-8"
+        >
+          Building scalable products at the intersection of design & engineering.
+          IIT Kanpur graduate with 3+ years of full-stack experience.
+        </motion.p>
+        <motion.div
+          variants={fadeUp} initial="hidden" animate="visible" custom={3}
+          className="flex flex-wrap gap-4"
+        >
+          <a href="mailto:ayushim100@gmail.com" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-heading font-medium text-sm hover:opacity-90 transition-opacity">
+            <Mail size={16} /> Get in Touch
+          </a>
+          <a href="https://github.com/ayushim100" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 glass-card px-6 py-3 rounded-lg font-heading font-medium text-sm text-foreground hover:border-primary/50 transition-colors">
+            <Github size={16} /> GitHub
+          </a>
+          <a href="tel:+917302547099" className="inline-flex items-center gap-2 glass-card px-6 py-3 rounded-lg font-heading font-medium text-sm text-foreground hover:border-primary/50 transition-colors">
+            <Phone size={16} /> +91-7302547099
+          </a>
+        </motion.div>
+      </div>
       <motion.div
-        variants={fadeUp} initial="hidden" animate="visible" custom={3}
-        className="flex flex-wrap gap-4"
+        variants={fadeUp} initial="hidden" animate="visible" custom={1}
+        className="mb-8 md:mb-0 shrink-0"
       >
-        <a href="mailto:ayushim100@gmail.com" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-heading font-medium text-sm hover:opacity-90 transition-opacity">
-          <Mail size={16} /> Get in Touch
-        </a>
-        <a href="tel:+917302547099" className="inline-flex items-center gap-2 glass-card px-6 py-3 rounded-lg font-heading font-medium text-sm text-foreground hover:border-primary/50 transition-colors">
-          <Phone size={16} /> +91-7302547099
-        </a>
+        <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-2 border-primary/30 shadow-[0_0_40px_hsl(38_92%_55%/0.15)]">
+          <img src={profilePhoto} alt="Ayushi Maheshwari" width={512} height={512} className="w-full h-full object-cover" />
+        </div>
       </motion.div>
     </div>
     <motion.div
