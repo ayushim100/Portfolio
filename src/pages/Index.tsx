@@ -75,43 +75,57 @@ const experiences = [
     company: "First Response Healthcare",
     period: "Oct 2024 – Present",
     highlights: [
-      "Built scalable healthcare booking backend handling 1000+ bookings/day",
-      "Developed management dashboard with RBAC and group-based access control",
-      "Integrated AWS, Kafka, Stripe, Sentry for real-time workflows",
+      "Built a scalable healthcare booking backend enabling mobile users to book services handling 1000 bookings/day",
+      "Developed a management dashboard for tracking bookings, teams, and services with RBAC and group-based access control",
+      "Implemented lead management, team roster scheduling, and service modules, improving operational efficiency and visibility",
+      "Integrated AWS, Kafka, Stripe, MirrorFly, Sentry to support real-time workflows, monitoring, and production reliability",
     ],
-    tech: ["Next.js", "Spring Boot", "Kotlin", "Redis", "Kafka"],
+    tech: ["Next.js", "React.js", "Spring Boot", "Java", "Kotlin", "Redis", "Kafka", "AWS", "Stripe", "MirrorFly", "Sentry", "JavaScript", "TypeScript"],
   },
   {
     role: "SDE-I",
     company: "MoveInSync",
     period: "Sep 2023 – Jun 2024",
     highlights: [
-      "Optimized Property Management platform used by 50 internal services",
-      "3x improvement in UI rendering via virtual scrolling",
-      "Leveraged Kafka for efficient real-time data flow",
+      "Optimized Property Management platform used by 50 internal searvices for quick debugging using Angular & Spring Boot",
+      "Enhanced user experience by implementing virtual scrolling, resulting in a 3x improvement in UI rendering",
+      "Leveraged Kafka to streamline data processing, ensuring efficient real-time data flow and communication for multiple clients",
     ],
-    tech: ["Angular", "Spring Boot", "Kafka", "Node.js"],
+    tech: ["Angular", "Spring Boot", "Kafka", "Android", "Java", "Kotlin", "JavaScript", "TypeScript"],
   },
   {
     role: "Software Engineer",
     company: "Samsung R&D Institute",
     period: "Jun 2022 – Sep 2023",
     highlights: [
-      "Built Android workout tracking app using Kotlin & MVVM",
-      "Earned Samsung Software Competency certificate (top 1%)",
-      "Won SPOT award for design & code quality improvements",
+      "Implemented a robust Android based workout tracking application using Kotlin & MVVM architecture",
+      "Integrated coroutines & Retrofit to handle asynchronous network calls for smooth data retrieval & updating",
+      "Designed UML diagrams to ensure a clear understanding of the project’s structure",
+      "Conferred with prestigious Samsung Software Competency (Professional) certificate, held by only 1% of employees",
+      "Awarded with SPOT award for constant design changes & code quality improvements in Q1 2023"
     ],
-    tech: ["Kotlin", "MVVM", "Retrofit", "Coroutines"],
+    tech: ["Kotlin", "MVVM", "Retrofit", "Coroutines", "Android", "Java", "JavaScript", "TypeScript"],
   },
   {
-    role: "Frontend Intern",
+    role: "FrontEnd Development Intern",
     company: "MFL EduClub",
     period: "Jan 2022 – Jun 2022",
     highlights: [
-      "Built web app with React, Redux, and service workers",
-      "Reduced API calls through smart caching strategies",
+      "Developed a web-app using ReactJS with reusable class-based components & HTTP server (client side routing)",
+      "Integrated app with Redux store & service worker to enhance performance by reducing API calls",
     ],
-    tech: ["React", "Redux", "REST APIs"],
+    tech: ["React", "Redux", "REST APIs", "JavaScript", "TypeScript"],
+  },
+  {
+    role: "Software Development Intern",
+    company: "MoveInSync",
+    period: "May 2021 – Aug 2021",
+    highlights: [
+      "Built a chat system for employees, to raise issues regarding office assets & integrated it with admin dashboard",
+      "Worked on transforming & adding attributes on SVG based images using Angular & D3.js",
+      "Received Letter of Recommendation (LoR) for valuable & effective contribution to the company"
+    ],
+    tech: ["Angular", "D3.js", "JavaScript", "TypeScript"],
   },
 ];
 
@@ -156,11 +170,15 @@ const Experience = () => (
 const skillCategories = [
   {
     title: "Frontend",
-    skills: ["React.js", "Next.js", "Angular", "React Native", "TypeScript", "Tailwind CSS", "HTML5/CSS3"],
+    skills: ["React.js", "Next.js", "Angular", "React Native", "JavaScript", "TypeScript", "Bootstrap", "Tailwind", "HTML5/CSS3", "ShadcnUI"],
   },
   {
     title: "Backend",
-    skills: ["Node.js", "Spring Boot", "Nest.js", "Express.js", "Kotlin", "Java", "Kafka"],
+    skills: ["C/C++", "Node.js", "Spring Boot", "Nest.js", "Express.js", "Kotlin", "Java", "Kafka", "Python"],
+  },
+  {
+    title: "Mobile",
+    skills: ["Android", "Kotlin", "React Native"],
   },
   {
     title: "Databases & Cloud",
@@ -168,8 +186,12 @@ const skillCategories = [
   },
   {
     title: "Tools & Practices",
-    skills: ["Git", "JIRA", "Jenkins", "Sentry", "Figma", "CI/CD", "Agile"],
+    skills: ["Git", "BitBucket", "JIRA", "Jenkins", "Sentry", "Figma", "CI/CD", "Agile", "Firebase"],
   },
+  {
+    title: "Competencies ",
+    skills: ["Problem Solving", "Design Analysis", "Unit Testing", "Root Cause Analysis", "Debugging", "Team Leadership"],
+  }
 ];
 
 const Skills = () => (
@@ -310,7 +332,21 @@ const Navbar = () => (
       <span className="font-heading font-bold text-lg">AM<span className="text-primary">.</span></span>
       <div className="hidden md:flex items-center gap-6 text-sm font-heading">
         {["experience", "skills", "projects", "education"].map((s) => (
-          <a key={s} href={`#${s}`} className="text-muted-foreground hover:text-foreground transition-colors capitalize">{s}</a>
+          // <a key={s} href={`#${s}`} className="text-muted-foreground hover:text-foreground transition-colors capitalize">{s}</a>
+          <a
+            key={s}
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById(s)?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }}
+            className="text-muted-foreground hover:text-foreground transition-colors capitalize"
+          >
+            {s}
+          </a>
         ))}
       </div>
       <a href="mailto:ayushim100@gmail.com" className="text-sm font-heading bg-primary text-primary-foreground px-4 py-1.5 rounded-full hover:opacity-90 transition-opacity">
